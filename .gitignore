@@ -1,0 +1,4 @@
+./lib/inter/cnumtest
+./lib/inter/open
+*.a
+*.o
