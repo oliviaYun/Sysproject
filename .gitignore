@@ -2,3 +2,4 @@
 ./lib/inter/open
 *.a
 *.o
+*.swp
