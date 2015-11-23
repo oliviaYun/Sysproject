@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <tgmath.h>
 #include <string.h>
+#include "open.h"
 int count_num(char *str)
 {
 	int i,cnt=0;
@@ -43,6 +44,7 @@ void open(void)
 	char buf[50];
 	int i,ncnt,dcnt;
 	double *num, *den;
+	fflush(stdin);
 	printf("Insert Numerator\n");
 	fflush(stdin);
 	fgets(buf,sizeof(buf),stdin);
@@ -76,8 +78,3 @@ void open(void)
 	return 0;
 }
 
-int main(void)
-{
-	open();
-	return 0;
-}
