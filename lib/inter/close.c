@@ -2,41 +2,9 @@
 #include <stdlib.h>
 #include <tgmath.h>
 #include <string.h>
-int count_num(char *str)
-{
-	int i,cnt=0;
-	int flag=0;
-	for(i = 0; i < 50; i++)
-	{
-		if(flag == 0)
-		{
-			if(str[i]<='9'&&str[i]>='0'){
-				flag = 1;
-				cnt ++;
-			}
-		}
-		else if(str[i]==' '||str[i]=='\n')
-			flag = 0;
-	}
-	return cnt;
-}
-void atoiarray(char *buf, double *num, int cnt)
-{
-	int i = 0;
-	char *temp;
-	num[i] = atof(strtok(buf," "));
-	for(i = 1; i < cnt; i++)
-	{
-		temp=strtok(NULL," ");
-		while(!(temp[0]<='9' && temp[0]>='0'))
-		{
-			temp = strtok(NULL," ");
-		}
-		num[i] = atof(temp);
-	}
+#include "open.h"
 
-}
-void open(void)
+void close(void)
 {
 	
 	double complex z1 = I;
@@ -78,6 +46,6 @@ void open(void)
 
 int main(void)
 {
-	open();
+	close();
 	return 0;
 }

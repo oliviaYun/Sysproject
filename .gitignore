@@ -3,6 +3,7 @@
 *.a
 *.o
 *.swp
+*.DS_Store
 ./lib/inter/open
 ./.git/hooks/update.sample
 ./.git/hooks/commit-msg.sample
