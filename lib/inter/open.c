@@ -37,13 +37,13 @@ void atoiarray(char *buf, double *num, int cnt)
 	}
 
 }
-void open(void)
+void open(double *num, double *den)
 {
 	
 	double complex z1 = I;
 	char buf[50];
 	int i,ncnt,dcnt;
-	double *num, *den;
+
 	fflush(stdin);
 	printf("Insert Numerator\n");
 	fflush(stdin);
@@ -61,9 +61,9 @@ void open(void)
 	for(i = 0; i < ncnt; i++)
 	{
 		if(i == (ncnt-1))
-			printf("%f \n");
+			printf("%.2lf \n",num[i]);
 		else
-			printf("%fs^%d +",num[i],(ncnt-i-1));
+			printf("%.2lfs^%d +",num[i],(ncnt-i-1));
 
 	}
 	printf("----------------------------------------------\n");
@@ -71,10 +71,10 @@ void open(void)
 	for(i = 0; i < dcnt; i++)
 	{
 		if(i==(dcnt-1))
-			printf("%f \n");
+			printf("%.2lf \n",den[i]);
 		else
-			printf("%fs^%d +",den[i],(dcnt-i-1));
+			printf("%.2lfs^%d +",den[i],(dcnt-i-1));
 	}
-	return 0;
+	return ;
 }
 

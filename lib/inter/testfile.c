@@ -4,6 +4,7 @@
 
 void main(void)
 {
-	open();
+	double *num, *den;
+	open(num,den);
 
 }

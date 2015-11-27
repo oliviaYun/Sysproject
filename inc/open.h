@@ -3,7 +3,7 @@
 
 int count_num(char *str);
 void atoiarray(char *buf, double *num, int cnt);
-void open(void);
+void open(double *num, double *den);
 
 #endif /* OPEN_H_ */
 
