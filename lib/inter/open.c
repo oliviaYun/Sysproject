@@ -37,10 +37,9 @@ void atoiarray(char *buf, double *num, int cnt)
 	}
 
 }
-void open(double *num, double *den)
+void open(double *num, int *retncnt, double *den, int *retdcnt)
 {
 	
-	double complex z1 = I;
 	char buf[50];
 	int i,ncnt,dcnt;
 
@@ -75,6 +74,9 @@ void open(double *num, double *den)
 		else
 			printf("%.2lfs^%d +",den[i],(dcnt-i-1));
 	}
+	*retncnt = ncnt;
+	*retdcnt = dcnt;
+	printf("finish");
 	return ;
 }
 
