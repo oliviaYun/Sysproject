@@ -61,7 +61,7 @@ void open(double **num, int *retncnt, double **den, int *retdcnt)
 	dcnt = count_num(buf);
 	*den = (double *)malloc(sizeof(double)*dcnt);
 	atoiarray(buf,*den,dcnt);
-
+/*
 	for(i = 0; i < ncnt; i++)
 	{
 		if(i == (ncnt-1))
@@ -79,6 +79,7 @@ void open(double **num, int *retncnt, double **den, int *retdcnt)
 		else
 			printf("%.2lfs^%d +",*den[i],(dcnt-i-1));
 	}
+*/
 	printf("return\n");
 	*retncnt = ncnt;
 	*retdcnt = dcnt;
