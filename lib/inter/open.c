@@ -9,6 +9,8 @@ int count_num(char *str)
 	int flag=0;
 	for(i = 0; i < 50; i++)
 	{
+		if(str[i] == 0)
+			return cnt;
 		if(flag == 0)
 		{
 			if(str[i]<='9'&&str[i]>='0'){
@@ -26,6 +28,8 @@ void atoiarray(char *buf, double *num, int cnt)
 	int i = 0;
 	char *temp;
 	num[i] = atof(strtok(buf," "));
+	if(cnt == 1)
+		return;
 	for(i = 1; i < cnt; i++)
 	{
 		temp=strtok(NULL," ");
@@ -37,10 +41,11 @@ void atoiarray(char *buf, double *num, int cnt)
 	}
 
 }
-void open(double *num, int *retncnt, double *den, int *retdcnt)
+void open(double **num, int *retncnt, double **den, int *retdcnt)
 {
 	
-	char buf[50];
+	char buf[50]={0,};
+	char dbuf[50]={0,};
 	int i,ncnt,dcnt;
 
 	fflush(stdin);
@@ -48,21 +53,21 @@ void open(double *num, int *retncnt, double *den, int *retdcnt)
 	fflush(stdin);
 	fgets(buf,sizeof(buf),stdin);
 	ncnt = count_num(buf);
-	num = (double *)malloc(sizeof(double)*ncnt);
-	atoiarray(buf,num,ncnt);
+	*num = (double *)malloc(sizeof(double)*ncnt);
+	atoiarray(buf,*num,ncnt);
 	printf("Insert Denomenator\n");
 	fflush(stdin);
 	fgets(buf,sizeof(buf),stdin);
 	dcnt = count_num(buf);
-	den = (double *)malloc(sizeof(double)*dcnt);
-	atoiarray(buf,den,dcnt);
+	*den = (double *)malloc(sizeof(double)*dcnt);
+	atoiarray(buf,*den,dcnt);
 
 	for(i = 0; i < ncnt; i++)
 	{
 		if(i == (ncnt-1))
-			printf("%.2lf \n",num[i]);
+			printf("%.2lf \n",*num[i]);
 		else
-			printf("%.2lfs^%d +",num[i],(ncnt-i-1));
+			printf("%.2lfs^%d +",*num[i],(ncnt-i-1));
 
 	}
 	printf("----------------------------------------------\n");
@@ -70,13 +75,14 @@ void open(double *num, int *retncnt, double *den, int *retdcnt)
 	for(i = 0; i < dcnt; i++)
 	{
 		if(i==(dcnt-1))
-			printf("%.2lf \n",den[i]);
+			printf("%.2lf \n",*den[i]);
 		else
-			printf("%.2lfs^%d +",den[i],(dcnt-i-1));
+			printf("%.2lfs^%d +",*den[i],(dcnt-i-1));
 	}
+	printf("return\n");
 	*retncnt = ncnt;
 	*retdcnt = dcnt;
-	printf("finish");
-	return ;
+	printf("%d %d\n",*retncnt,*retdcnt);
+	return;
 }
 
