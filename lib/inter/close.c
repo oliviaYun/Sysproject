@@ -4,7 +4,7 @@
 #include <string.h>
 #include "open.h"
 #include "close.h"
-void close(double **num, int *retncnt, double **den, int *retdcnt, double **hnum, int *hncnt, double **rethden, int *rethdcnt)
+void close(double **num, int *retncnt, double **den, int *retdcnt, double **hnum, int *rethncnt, double **hden, int *rethdcnt)
 {
 	
 	char buf[50]={0,};
@@ -36,12 +36,12 @@ void close(double **num, int *retncnt, double **den, int *retdcnt, double **hnum
 	hdcnt = count_num(buf);
 	*hden = (double *)malloc(sizeof(double)*hdcnt);
 	atoiarray(buf,*hden,hdcnt);
-//	printf("return\n");
+
 	*retncnt = ncnt;
 	*retdcnt = dcnt;
 	*rethncnt = hncnt;
 	*rethdcnt = hdcnt;
-//	printf("%d %d\n",*retncnt,*retdcnt);
+
 	return;
 }
 
