@@ -25,7 +25,7 @@ void main(void)
 		printf("%.2f ^ %d + ",den[i],retdcnt-i);
 	}
 	printf("\n");
-	fp = fopen("result.txt","w+");
+	fp = fopen("../disp/result.txt","w+");
 	for(w = 0.1; w <10; w+=0.001)
 	{
 //		w = 1;
@@ -41,7 +41,7 @@ void main(void)
 		for(i = 0; i < retdcnt; i++)
 		{
 			if((retdcnt-i-1)==0)
-				zden+=den[i]*w;
+				zden+=den[i];
 			else
 				zden+=den[i]*pow(w*I,retdcnt-i-1);
 		}		
@@ -52,8 +52,8 @@ void main(void)
 //		printf("real : %.1f imag : %.1f \n",creal(z),cimag(z));	
 		//double mag = cabs(z);
 		//double angle = carg(z);
-		printf("%.3f, %.3f\n",cabs(zden)-cabs(znum),carg(zden)-carg(znum));
-		fprintf(fp,"%.5f	%.5f\n",cabs(zden)-cabs(znum),carg(zden)-carg(znum));
+		printf("%lf, %lf\n",cabs(zden)-cabs(znum),carg(zden)-carg(znum));
+		fprintf(fp,"%f %lf %lf\n",w,cabs(zden)-cabs(znum),carg(zden)-carg(znum));
 	}
 
 }
