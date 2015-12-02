@@ -3,11 +3,17 @@
 #include "open.h"
 #include <complex.h>
 #include <tgmath.h>
+double complex devide (double complex x, double complex y){
 
+	double complex z;
+	z = (creal(x)*creal(y)+cimag(x)*cimag(y))/(creal(y)*creal(y)+cimag(y)*cimag(y));
+	z+=((cimag(x)*creal(y)-creal(x)*cimag(y))/(creal(y)*creal(y)+cimag(y)*cimag(y)))*I;
+	return z;
+}
 
 void main(void)
 {
-	FILE *fp;
+	FILE *fp, *fp2;
 	double *num, *den, w;
 	int retncnt, retdcnt, i, j;
 	double complex znum, zden, z;
@@ -26,6 +32,7 @@ void main(void)
 	}
 	printf("\n");
 	fp = fopen("../disp/result.txt","w+");
+	fp2 = fopen("../disp/result2.txt","w+");
 	for(w = 0.1; w <10; w+=0.001)
 	{
 //		w = 1;
@@ -52,8 +59,10 @@ void main(void)
 //		printf("real : %.1f imag : %.1f \n",creal(z),cimag(z));	
 		//double mag = cabs(z);
 		//double angle = carg(z);
+		
 		printf("%f, %lf, %lf\n",w,20*log10(cabs(znum))-20*log10(cabs(zden)),carg(znum)-carg(zden));
 		fprintf(fp,"%f %lf %lf\n",w,20*log10(cabs(znum))-20*log10(cabs(zden)),carg(znum)-carg(zden));
+		fprintf(fp2,"%f %f\n",creal(devide(znum,zden)),cimag(devide(znum,zden)));
 	}
 
 }
