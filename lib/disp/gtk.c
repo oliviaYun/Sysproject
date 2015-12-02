@@ -11,7 +11,7 @@ char *argv[])
 
   window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 
- plot = gtk_image_new_from_file("plot.png");
+ plot = gtk_image_new_from_file("result.png");
   g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
 
   gtk_widget_show (window);

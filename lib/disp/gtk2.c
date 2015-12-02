@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
   gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
   gtk_window_set_title(GTK_WINDOW(window), "Red Rock");
 
-  image = gtk_image_new_from_file("plot.png");
+  image = gtk_image_new_from_file("result2.png");
 
   gtk_container_add(GTK_CONTAINER(window), image);
 
