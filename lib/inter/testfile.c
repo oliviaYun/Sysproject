@@ -52,8 +52,8 @@ void main(void)
 //		printf("real : %.1f imag : %.1f \n",creal(z),cimag(z));	
 		//double mag = cabs(z);
 		//double angle = carg(z);
-		printf("%lf, %lf\n",cabs(zden)-cabs(znum),carg(zden)-carg(znum));
-		fprintf(fp,"%f %lf %lf\n",w,cabs(zden)-cabs(znum),carg(zden)-carg(znum));
+		printf("%f, %lf, %lf\n",w,20*log10(cabs(znum))-20*log10(cabs(zden)),carg(znum)-carg(zden));
+		fprintf(fp,"%f %lf %lf\n",w,20*log10(cabs(znum))-20*log10(cabs(zden)),carg(znum)-carg(zden));
 	}
 
 }
