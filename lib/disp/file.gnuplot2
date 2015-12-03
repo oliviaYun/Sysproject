@@ -1,0 +1,11 @@
+set term png
+set output 'bodeplot-phase.png'
+set title "bodeplot-phase"
+set xlabel "w"
+set ylabel "phase"
+set autoscale
+set logscale x
+plot filename using 1:3 with lines
+
+
+
