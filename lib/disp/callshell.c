@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
-
 int bodeplot(char *b_command)
 {
 	if(fork()==0)
@@ -14,10 +13,9 @@ int bodeplot(char *b_command)
 	{
 		wait();
 	}
-
-
+	return 0;
 }
-int nyquist(char *c_command)
+int nyquistplot(char *c_command)
 {
 	 if(fork()==0)
         {
@@ -28,13 +26,15 @@ int nyquist(char *c_command)
         {
                 wait();
         }
+	return 0;
 }
-
+/*
 int main (void)
 {
 	int b_command;
 	int n_command;
-	b_command = bodeplot("./bode.sh");
-	//n_command = nyquist("./nyquist.sh");
+	//b_command = bodeplot("./bode.sh");
+	n_command = nyquist("./nyquist.sh");
 	return 0;
 }
+*/
