@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -g -Wall -I../../inc -L../inter/ -linter 
+CFLAGS = -g -Wall -I../../inc 
 .SUFFIXES: .c .o
 OUTPUT = libcalc.a
 $(OUTPUT): bode.o nyquist.o
