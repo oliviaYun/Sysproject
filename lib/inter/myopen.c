@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <tgmath.h>
 #include <string.h>
-#include "open.h"
+#include "myopen.h"
 int count_num(char *str)
 {
 	int i,cnt=0;
@@ -41,7 +41,7 @@ void atoiarray(char *buf, double *num, int cnt)
 	}
 
 }
-void open(double **num, int *retncnt, double **den, int *retdcnt)
+void myopen(double **num, int *retncnt, double **den, int *retdcnt)
 {
 	
 	char buf[50]={0,};

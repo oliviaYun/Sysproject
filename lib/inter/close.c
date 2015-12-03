@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <tgmath.h>
 #include <string.h>
-#include "open.h"
+#include "myopen.h"
 #include "close.h"
 void close(double **num, int *retncnt, double **den, int *retdcnt, double **hnum, int *rethncnt, double **hden, int *rethdcnt)
 {
