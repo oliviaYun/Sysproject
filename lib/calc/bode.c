@@ -53,7 +53,7 @@ void bode(int status, int mode)
 		printf("\n");
 	
 	}
-	fp = fopen("result.txt","w+");
+	fp = fopen("result.dat","w+");
 	for(w = 0.1; w <10; w+=0.001)
 	{
 //		w = 1;

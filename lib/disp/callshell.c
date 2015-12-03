@@ -4,9 +4,12 @@
 #include <sys/types.h>
 int bodeplot(char *b_command)
 {
+	int result;
 	if(fork()==0)
 	{
-		execl("/bin/bash","bash","-c",b_command,NULL);
+		result = execl("/bin/bash","bash","-c",b_command,NULL);
+		if(result == -1)
+		printf("bash open error\n");
 		exit(123);
 	}
 	else

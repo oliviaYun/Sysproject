@@ -1,4 +1,4 @@
-DIRS = lib/inter lib/calc src
+DIRS = lib/inter lib/calc lib/disp src
 .PHONY: all clean
 
 all:
