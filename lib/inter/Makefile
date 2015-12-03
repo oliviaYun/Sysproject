@@ -2,8 +2,8 @@ CC = gcc
 CFLAGS = -g -Wall -I../../inc 
 .SUFFIXES: .c .o
 OUTPUT = libinter.a
-$(OUTPUT): myopen.o close.o
-	ar rv libinter.a myopen.o close.o
+$(OUTPUT): myopen.o myclose.o
+	ar rv libinter.a myopen.o myclose.o
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:

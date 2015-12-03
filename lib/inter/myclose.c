@@ -3,8 +3,8 @@
 #include <tgmath.h>
 #include <string.h>
 #include "myopen.h"
-#include "close.h"
-void close(double **num, int *retncnt, double **den, int *retdcnt, double **hnum, int *rethncnt, double **hden, int *rethdcnt)
+#include "myclose.h"
+void myclose(double **num, int *retncnt, double **den, int *retdcnt, double **hnum, int *rethncnt, double **hden, int *rethdcnt)
 {
 	
 	char buf[50]={0,};

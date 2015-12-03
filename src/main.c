@@ -6,5 +6,5 @@
 void main()
 {
 
-	bode();
+	bode(1,0);
 }
