@@ -4,7 +4,7 @@
 #include "callshell.h"
 #include "gtk2.h"
 #include "Nyquistgtk.h"
-//#include "nyquist.h"
+#include "nyquist.h"
 
 //0 : G, 1: GH
 //0 : openloop, 1: closed loop
@@ -16,11 +16,9 @@ void Bode_main(int argc, char *argv[], int p, int l)
 }
 void Nyquist_main(int argc, char *argv[],int p, int l)
 {
-	//00
-	//01
-	//10
-	//11
-
+	nyquist(p-1,l-1);
+	nyquistplot("lib/disp/nyquist.sh");
+	Nyquistgtk(argc, argv);
 }
 void clearTerm()
 {

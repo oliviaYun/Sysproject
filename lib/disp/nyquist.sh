@@ -1,6 +1,6 @@
 #! /bin/bash
 
-gnuplot -e "filename='result2.dat'" nyquist.gnuplot
+gnuplot -e "filename='result2.dat'" lib/disp/nyquist.gnuplot
 
 
 
