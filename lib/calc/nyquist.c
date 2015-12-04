@@ -101,6 +101,6 @@ void nyquist(int status, int mode)
 			printf("wrong parameters\n");
 			exit(1);
 		}	
-		fprintf(fp,"%lf %lf\n",w,creal(result),cimag(result));
+		fprintf(fp,"%lf %lf\n",creal(result),cimag(result));
 	}
 }
