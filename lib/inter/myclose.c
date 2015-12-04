@@ -11,9 +11,8 @@ void myclose(double **num, int *retncnt, double **den, int *retdcnt, double **hn
 	char dbuf[50]={0,};
 	int i,ncnt,dcnt,hncnt,hdcnt;
 
-	fflush(stdin);
 	printf("Insert Plant Numerator\n");
-	fflush(stdin);
+	getchar();
 	fgets(buf,sizeof(buf),stdin);
 	ncnt = count_num(buf);
 	*num = (double *)malloc(sizeof(double)*ncnt);

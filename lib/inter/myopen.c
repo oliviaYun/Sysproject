@@ -48,15 +48,13 @@ void myopen(double **num, int *retncnt, double **den, int *retdcnt)
 	char dbuf[50]={0,};
 	int i,ncnt,dcnt;
 
-	fflush(stdin);
 	printf("Insert Numerator\n");
-	fflush(stdin);
+	getchar();
 	fgets(buf,sizeof(buf),stdin);
 	ncnt = count_num(buf);
 	*num = (double *)malloc(sizeof(double)*ncnt);
 	atoiarray(buf,*num,ncnt);
 	printf("Insert Denomenator\n");
-	fflush(stdin);
 	fgets(buf,sizeof(buf),stdin);
 	dcnt = count_num(buf);
 	*den = (double *)malloc(sizeof(double)*dcnt);
