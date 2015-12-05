@@ -1,8 +1,8 @@
 DIRS = lib/inter lib/calc lib/disp src
 .PHONY: all clean print
-CHECK = $(shell dpkg -l | grep gnuplot)
+CHECK := $(shell dpkg -l | grep gnuplot)
 
-ifdef $(CHECK)
+ifneq ($(CHECK),)
 
 all:
 	@for d in $(DIRS); \
