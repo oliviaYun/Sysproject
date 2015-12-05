@@ -36,7 +36,9 @@ http://www.gnuplot.info
     $git clone https://github.com/oliviaYun/Sysproject.git
 
     $make
-
+    
+        if you receive message "install gnuplot", See Requirement
+    
     $./Graph
 
 ## Author
