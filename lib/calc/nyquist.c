@@ -96,7 +96,7 @@ void nyquist(int status, int mode)
 		else if(status == 1 && mode == 0)
 			result = G*H;
 		else if(status == 1 && mode == 1)
-			result = devide(G*H, 1+G*H);
+			result = devide(G, 1+G*H);
 		else{
 			printf("wrong parameters\n");
 			exit(1);
